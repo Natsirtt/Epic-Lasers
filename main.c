@@ -1,18 +1,14 @@
-/* 
- * File:   main.c
- * Author: natsirtt
- *
- * Created on 28 mars 2013, 20:50
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+//Gestion de l'état du jeu
+#define MENU 1
+#define IN_GAME 2
+#define PAUSE 3
+#define LOADING 4
 
+int main(int argc, char argv[]) {
+  
   return (EXIT_SUCCESS);
 }
 
