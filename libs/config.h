@@ -5,16 +5,19 @@
 extern "C" {
 #endif
 
-  #define CONFIG_FILE_PATH "conf/config"
-  
+#define CONFIG_FILE_PATH "conf/config"
+#define CONFIG_DEFAULT_LINE_INTRO "#The config file for Epic Lasers client. Any manual changes may be overrided by the program\n"
+#define CONFIG_DEFAULT_LINE_ANTIALIASING "antialiasing=false\n"
+#define CONFIG_DEFAULT_LINE_ANTIALIASING_SAMPLES "antialiasing-samples=2\n"
+
   /**
    * Creates a new config file, erasing the old one if it exists.
    * Keywords are set to defaults values.
    * 
-   * @return 0 if the file was created, -1 if its creation failed.
+   * Exit with failure the program if the creation failed.
    */
-  int config_createConfigFile();
-  
+  void config_createConfigFile();
+
   /**
    * Parses the config file in order to know if antialiasing is
    * active (true) or not (false). If it is, the number of samples
@@ -30,7 +33,7 @@ extern "C" {
    * file failed.
    */
   int config_isAntialiasingActive();
-  
+
   /**
    * Parses the config file searching for the "antialiasing-samples" keyword and
    * its value.

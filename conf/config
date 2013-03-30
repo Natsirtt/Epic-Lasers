@@ -1,0 +1,2 @@
+#The config file for Epic Lasers client. Any manual changes can be overrided by the program
+antialiasing=false
