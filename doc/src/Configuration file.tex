@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{fullpage}
+
+\title{Epic Lasers - configuration file}
+\author{Tristan LOUET}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+The configuration file is a text file used to store the current
+configuration of the Epic Lasers client. It is useful for the program
+as it can reads the file and configures the program (for example the
+number of samples used for the anti-aliasing). 
+
+\section{Structure}
+The config file ignores all lines that begins with a '\#' so that such
+lines can be used as comments.
+Otherwise, a line is interpreted and must be structured as this :
+\begin{verbatim}
+keyword=value
+\end{verbatim}
+
+All associations of keywords and values are exhaustively listed bellow :
+\begin{itemize}
+\item antialiasing=\{true,false\}
+\item antialiasing-samples=\{2,4,6\}
+\end{itemize}
+
+\end{document}
