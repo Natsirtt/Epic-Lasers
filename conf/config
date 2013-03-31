@@ -1,2 +1,3 @@
-#The config file for Epic Lasers client. Any manual changes can be overrided by the program
+#The config file for Epic Lasers client. Any manual changes may be overrided by the program
 antialiasing=false
+antialiasing-samples=2

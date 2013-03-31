@@ -9,9 +9,9 @@
 int _config_writeLine(FILE *file, const char *line) {
   size_t lineLength = strlen(line);
   size_t wrote = fwrite(line, lineLength, 1, file);
-  if (wrote != lineLength) {
+  /*if (wrote != lineLength) {
     return -1;
-  }
+  }*/
   return 0;
 }
 
@@ -46,12 +46,10 @@ int _config_getValue(char *buff, FILE *file, const char *keyword) {
   int stop = 0;
   char internBuff[CONFIG_BUFF_LENGTH];
   while (!stop) {
-    fread(internBuff, CONFIG_BUFF_LENGTH, 1, file);
+    fgets(internBuff, CONFIG_BUFF_LENGTH, file);
     if (!(internBuff[0] == '#')) {
       if (strstr(internBuff, keyword) != NULL) {
-        printf("OK");
         buff = strtok(internBuff, "=");
-        printf("%s\n", buff);
         return 1;
       }
     }
