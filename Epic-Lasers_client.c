@@ -8,6 +8,10 @@
 
 gameStatus_t gameStatus;
 
+void quitProgram() {
+  gu_SDLQuit(1);
+}
+
 void _gameStatusSwitcher() {
   switch(gameStatus) {
     case main_menu:
@@ -21,6 +25,9 @@ void _gameStatusSwitcher() {
       break;
     case loading:
       
+      break;
+    case quitting:
+      quitProgram();
       break;
     default:
       fprintf(stderr, "Unknown game status ! Returning to main menu\n");
