@@ -1,10 +1,3 @@
-/* 
- * File:   requests.h
- * Author: monSpeudo
- *
- * Created on 31 mars 2013, 22:04
- */
-
 #ifndef REQUESTS_H
 #define	REQUESTS_H
 #include "packets.h"

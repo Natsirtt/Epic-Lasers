@@ -8,7 +8,8 @@
 
 int _config_writeLine(FILE *file, const char *line) {
   size_t lineLength = strlen(line);
-  size_t wrote = fwrite(line, lineLength, 1, file);
+  //size_t wrote =
+  fwrite(line, lineLength, 1, file);
   /*if (wrote != lineLength) {
     return -1;
   }*/

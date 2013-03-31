@@ -8,12 +8,15 @@ extern "C" {
   //Management of the game status
 
   typedef enum {
+    null_status,
     main_menu,
+    settings,
     in_game,
     paused,
     loading,
     quitting
-  } gameStatus_t;
+  }
+  gameStatus_t;
 
 #ifdef	__cplusplus
 }

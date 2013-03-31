@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <GL/glu.h>
 
 #include "commons.h"
-#include "mainMenu.h"
+#include "menus.h"
 #include "libs/glUtils.h"
 #include "libs/config.h"
+#include "libs/camera.h"
 
+camCamera camera;
 gameStatus_t gameStatus;
 
 void quitProgram() {
@@ -47,7 +50,15 @@ int main(int argc, char *argv[]) {
     screen = gu_init_SDL("Epic Lasers", config_getAntialiasingSamplesNb());
   }
   
+  camInit(&camera);
+  
   gu_init_GL();
+  glMatrixMode(GL_PROJECTION);
+  gluPerspective(50, (float) screen->w / screen->h, 1, 100);
+  glMatrixMode(GL_MODELVIEW);
+  
+  camFixePosition(&camera, 0, 0, 10, 0, 0, 0, 0, 1, 0);
+  
   //Starting the game, we arrive on the menu
   gameStatus = main_menu;
   

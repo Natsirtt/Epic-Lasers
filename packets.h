@@ -1,10 +1,3 @@
-/* 
- * File:   packets.h
- * Author: shifty
- *
- * Created on 31 mars 2013, 21:54
- */
-
 #ifndef PACKETS_H
 #define	PACKETS_H
 #include <sys/types.h>

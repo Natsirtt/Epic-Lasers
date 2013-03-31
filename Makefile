@@ -9,16 +9,16 @@ MAKE_LIBS=make --directory=libs
 
 all: Epic-Lasers_client Epic-Lasers_server
 
-Epic-Lasers_client: Epic-Lasers_client.o mainMenu.o $(DIR_LIBS)/config.o $(DIR_LIBS)/glUtils.o
+Epic-Lasers_client: Epic-Lasers_client.o menus.o $(DIR_LIBS)/config.o $(DIR_LIBS)/glUtils.o $(DIR_LIBS)/camera.o $(DIR_LIBS)/sdlKeyUtils.o $(DIR_LIBS)/intList.o $(DIR_LIBS)/fblList.o
 	$(GCC) -o $@ $^ $(LIBS_SDL) $(LIBS)
 
 Epic-Lasers_server: Epic-Lasers_server.o
 	$(GCC) -o $@ $^ $(LIBS_SDL) $(LIBS)
 
-Epic-Lasers_client.o: Epic-Lasers_client.c commons.h mainMenu.h
+Epic-Lasers_client.o: Epic-Lasers_client.c commons.h menus.h
 	$(GCC) -c $(CFLAGS) $(CFLAGS_SDL) $<
 
-mainMenu.o: mainMenu.c mainMenu.h commons.h
+menus.o: menus.c menus.h commons.h $(DIR_LIBS)/sdlKeyUtils.h
 	$(GCC) -c $(CFLAGS) $(CFLAGS_SDL) $<
 
 config.o:
